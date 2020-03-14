@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import logo from './logo.svg';
 import './App.css';
 import TripGenerator from './Components/TripGenerator'
 
@@ -15,7 +14,9 @@ function App() {
       <span>{trip.title} <button onClick={handleFav}>{fav ? "💖" : "♡" }</button></span>
     </li>)
   )
-  useEffect(() => {
+
+
+	useEffect(() => {
     fetch("http://localhost:3020/trips.json")
       .then((res) => res.json())
       .then((data) => setTrips(data))

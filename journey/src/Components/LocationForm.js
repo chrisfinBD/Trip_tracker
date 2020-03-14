@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 
 function LocationForm() {
 	return (
 	<div>
 		<label>From:</label>
-		<input placeholder="City"/> <input id="inpstate" maxlength="2" placeholder="State" /><br />
+		<input type="text" placeholder="City, State"/><br />
 		<label>To:</label>
-		<input placeholder="City"/> <input id="inpstate" maxlength="2" placeholder="State" /><br />
-		<input placeholder="DestinationLandmark"/><br />  
+		<input type="text" placeholder="City, State"/><br />
+		<input type="text" placeholder="DestinationLandmark"/><br />  
 	</div>
 	)}
 
