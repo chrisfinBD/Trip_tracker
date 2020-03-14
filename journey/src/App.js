@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import logo from './logo.svg';
 import './App.css';
 import TripGenerator from './Components/TripGenerator'
+
+
+
 function App() {
+
+  const [trips, setTrips] = useState([])
+
+  const tripList = trips.map((trip, i) => (
+    <li key={i}>
+      <span>{trip.title}</span>
+      
+     
+    </li>)
+  )
+  useEffect(() => {
+    fetch("http://localhost:3020/trips.json")
+      .then((res) => res.json())
+      .then((data) => setTrips(data))
+      .catch((error) => console.log("Oops", error))
+  }, [])
+
+
   return (
     <div className="App">
       <header className="App-header">
+        {tripList}
 				<TripGenerator />
+        
 			</header>
     </div>
   );
