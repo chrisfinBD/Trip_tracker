@@ -5,7 +5,9 @@ function TripGenerator() {
 	return (
 	<div>
 		<input placeholder="Name Your Trip"/><br />
-		<LocationForm />
+		<label> Date: </label> <input type="date" /><br />
+		<LocationForm />	
+		<button type="submit">Submit</button>
 	</div>
 	)}
 
