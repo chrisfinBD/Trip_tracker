@@ -14,9 +14,6 @@ function App() {
       <span>{trip.title} <button onClick={handleFav}>{fav ? "💖" : "♡" }</button></span>
     </li>)
   )
-	const [tripTitle, setTripTtitle] = useState("")
-	const [locationsValue, setLocationsValue] = useState("")
-	const [startDate, setStartDate] = useState(new Date().getDate())
 	
 	useEffect(() => {
     fetch("http://localhost:3020/trips.json")
@@ -24,15 +21,6 @@ function App() {
       .then((data) => setTrips(data))
       .catch((error) => console.log("Oops", error))
   }, [])
-
-	const handleSubmit = (event)=> {
-		const params = {trips: {title: tripTitle, loctions: locationsValue, start_date: startDate}}
-			fetch(`http://localhost:3020/trips.json`, {
-				method: "POST",
-				body: JSON.stringify(params)
-			}).then((res)=> console.log(res))
-			.catch((err)=> console.log("Oops", err))
-		}
 
   return (
     <div className="App">
