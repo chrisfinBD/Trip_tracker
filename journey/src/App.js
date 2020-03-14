@@ -8,12 +8,11 @@ import TripGenerator from './Components/TripGenerator'
 function App() {
 
   const [trips, setTrips] = useState([])
-
+	const [fav, setFav] = useState(false)
+	const handleFav = (event) => { setFav(!fav) }
   const tripList = trips.map((trip, i) => (
     <li key={i}>
-      <span>{trip.title}</span>
-      
-     
+      <span>{trip.title} <button onClick={handleFav}>{fav ? "💖" : "♡" }</button></span>
     </li>)
   )
   useEffect(() => {
