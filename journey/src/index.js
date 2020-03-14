@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Trips from './Trips';
 import * as serviceWorker from './serviceWorker';
 import TripGenerator from './Components/TripGenerator';
 import { Link, Redirect, Switch, Route, Router } from 'react-router-dom'

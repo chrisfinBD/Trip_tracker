@@ -1,15 +1,13 @@
 import React from 'react'
 
-
-function LocationForm() {
+function LocationForm(props) {
 	return (
 	<div>
-		<label>From:</label><br />
-		<input placeholder="City"/> <input id="inpstate" maxlength="2" placeholder="State" /> <button>⊖</button><br />
-		<label>To:</label><br />
-		<input placeholder="Landmarks?"/><br />  
-		<input placeholder="City"/> <input id="inpstate" maxlength="2" placeholder="State" /> <button>⊖</button><br />
-		<button type="submit">Submit</button>
+		<label>From:</label>
+		<input type="text" placeholder="City, State" defaultValue={props.title}/><br />
+		<label>To:</label>
+		<input type="text" placeholder="City, State"/><br />
+		<input type="text" placeholder="DestinationLandmark"/><br />  
 	</div>
 	)}
 
