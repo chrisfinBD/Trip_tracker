@@ -1,23 +1,24 @@
 
 # Kill all the data
-Location.destroy_all
+#Location.destroy_all
 
-Trip.destroy_all
+# Trip.destroy_all
 
 # Add template data 
  t = Trip.new
-t.title = "The first trip"
+ t.title = "The first trip"
+ t.start_date = DateTime.now  
  t.favorite = false
  t.save
- puts t.errors.full_messages
-l1 = Location.new
+
+ l1 = Location.new
  l1.title = "Disney California"
  l1.address = "1313 Disneyland Dr, Anaheim, CA 92802"
  l1.trip_id = Trip.last.id
  l1.save
 
  l2 = Location.new
-l2.title = "The Good Place"
+ l2.title = "The Good Place"
  l2.address  = "317 S 6th St, Las Vegas, NV 89101"
  l2.trip_id = Trip.last.id
  l2.save
